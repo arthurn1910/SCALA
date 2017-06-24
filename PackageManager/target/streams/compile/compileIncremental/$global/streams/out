@@ -1,0 +1,104 @@
+[debug] [naha] 
+[debug] [naha] Initial source changes: 
+[debug] [naha] 	removed:Set()
+[debug] [naha] 	added: Set(/home/tajgeer/Repozytoria/PackageManager/src/main/scala/entities/TrackEntity.scala, /home/tajgeer/Repozytoria/PackageManager/src/main/scala/API.scala, /home/tajgeer/Repozytoria/PackageManager/src/main/scala/Response.scala, /home/tajgeer/Repozytoria/PackageManager/src/main/scala/entities/PackageEntity.scala, /home/tajgeer/Repozytoria/PackageManager/src/main/scala/Application.scala)
+[debug] [naha] 	modified: Set()
+[debug] [naha] Invalidated products: Set()
+[debug] [naha] External API changes: API Changes: Set()
+[debug] [naha] Modified binary dependencies: Set()
+[debug] [naha] Initial directly invalidated sources: Set(/home/tajgeer/Repozytoria/PackageManager/src/main/scala/entities/TrackEntity.scala, /home/tajgeer/Repozytoria/PackageManager/src/main/scala/API.scala, /home/tajgeer/Repozytoria/PackageManager/src/main/scala/Response.scala, /home/tajgeer/Repozytoria/PackageManager/src/main/scala/entities/PackageEntity.scala, /home/tajgeer/Repozytoria/PackageManager/src/main/scala/Application.scala)
+[debug] [naha] 
+[debug] [naha] Sources indirectly invalidated by:
+[debug] [naha] 	product: Set()
+[debug] [naha] 	binary dep: Set()
+[debug] [naha] 	external source: Set()
+[debug] All initially invalidated sources: Set(/home/tajgeer/Repozytoria/PackageManager/src/main/scala/entities/TrackEntity.scala, /home/tajgeer/Repozytoria/PackageManager/src/main/scala/API.scala, /home/tajgeer/Repozytoria/PackageManager/src/main/scala/Response.scala, /home/tajgeer/Repozytoria/PackageManager/src/main/scala/entities/PackageEntity.scala, /home/tajgeer/Repozytoria/PackageManager/src/main/scala/Application.scala)
+[debug] [naha] Initial set of included nodes: Set(/home/tajgeer/Repozytoria/PackageManager/src/main/scala/entities/TrackEntity.scala, /home/tajgeer/Repozytoria/PackageManager/src/main/scala/API.scala, /home/tajgeer/Repozytoria/PackageManager/src/main/scala/Response.scala, /home/tajgeer/Repozytoria/PackageManager/src/main/scala/entities/PackageEntity.scala, /home/tajgeer/Repozytoria/PackageManager/src/main/scala/Application.scala)
+[debug] [naha] Recompiling all 5 sources: invalidated sources (5) exceeded 50.0% of all sources
+[info] Compiling 5 Scala sources to /home/tajgeer/Repozytoria/PackageManager/target/scala-2.12/classes...
+[debug] Getting org.scala-sbt:compiler-interface:0.13.15:component from component compiler for Scala 2.12.2
+[info] 'compiler-interface' not yet compiled for Scala 2.12.2. Compiling...
+[debug] Plain interface to Scala compiler 2.12.2  with arguments: 
+[debug] 	-nowarn
+[debug] 	-d
+[debug] 	/tmp/sbt_e17b4f0c
+[debug] 	-bootclasspath
+[debug] 	/usr/lib/jvm/java-8-openjdk/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk/jre/classes:/home/tajgeer/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.2.jar
+[debug] 	-classpath
+[debug] 	/home/tajgeer/.sbt/boot/scala-2.10.6/org.scala-sbt/sbt/0.13.15/xsbti/interface-0.13.15.jar:/tmp/sbt_16d45043/srcs/org.scala-sbt/compiler-interface/compiler-interface-0.13.15-sources.jar:/home/tajgeer/.ivy2/cache/org.scala-lang/scala-compiler/jars/scala-compiler-2.12.2.jar:/home/tajgeer/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.12.2.jar:/home/tajgeer/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.0.6.jar:/home/tajgeer/.ivy2/cache/jline/jline/jars/jline-2.14.3.jar
+[debug] 	/tmp/sbt_c1c317cd/xsbt/API.scala
+[debug] 	/tmp/sbt_c1c317cd/xsbt/Analyzer.scala
+[debug] 	/tmp/sbt_c1c317cd/xsbt/Command.scala
+[debug] 	/tmp/sbt_c1c317cd/xsbt/Compat.scala
+[debug] 	/tmp/sbt_c1c317cd/xsbt/CompilerInterface.scala
+[debug] 	/tmp/sbt_c1c317cd/xsbt/ConsoleInterface.scala
+[debug] 	/tmp/sbt_c1c317cd/xsbt/DelegatingReporter.scala
+[debug] 	/tmp/sbt_c1c317cd/xsbt/Dependency.scala
+[debug] 	/tmp/sbt_c1c317cd/xsbt/ExtractAPI.scala
+[debug] 	/tmp/sbt_c1c317cd/xsbt/ExtractUsedNames.scala
+[debug] 	/tmp/sbt_c1c317cd/xsbt/GlobalHelpers.scala
+[debug] 	/tmp/sbt_c1c317cd/xsbt/LocateClassFile.scala
+[debug] 	/tmp/sbt_c1c317cd/xsbt/Log.scala
+[debug] 	/tmp/sbt_c1c317cd/xsbt/Message.scala
+[debug] 	/tmp/sbt_c1c317cd/xsbt/ScaladocInterface.scala
+[info]   Compilation completed in 10.121 s
+[debug] Getting org.scala-sbt:compiler-interface:0.13.15:component from component compiler for Scala 2.12.2
+[debug] Running cached compiler 75e9f84a, interfacing (CompilerInterface) with Scala compiler version 2.12.2
+[debug] Calling Scala compiler with arguments  (CompilerInterface):
+[debug] 	-bootclasspath
+[debug] 	/usr/lib/jvm/java-8-openjdk/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk/jre/classes:/home/tajgeer/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.2.jar
+[debug] 	-classpath
+[debug] 	/home/tajgeer/Repozytoria/PackageManager/target/scala-2.12/classes:/home/tajgeer/Repozytoria/PackageManager/lib/jandex-2.0.3.Final.jar:/home/tajgeer/Repozytoria/PackageManager/lib/javassist-3.20.0-GA.jar:/home/tajgeer/Repozytoria/PackageManager/lib/classmate-1.3.0.jar:/home/tajgeer/Repozytoria/PackageManager/lib/jboss-logging-3.3.0.Final.jar:/home/tajgeer/Repozytoria/PackageManager/lib/dom4j-1.6.1.jar:/home/tajgeer/Repozytoria/PackageManager/lib/hibernate-core-5.2.10.Final.jar:/home/tajgeer/Repozytoria/PackageManager/lib/jboss-transaction-api_1.2_spec-1.0.1.Final.jar:/home/tajgeer/Repozytoria/PackageManager/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar:/home/tajgeer/Repozytoria/PackageManager/lib/antlr-2.7.7.jar:/home/tajgeer/Repozytoria/PackageManager/lib/hibernate-commons-annotations-5.0.1.Final.jar:/home/tajgeer/.ivy2/cache/org.json4s/json4s-native_2.12/jars/json4s-native_2.12-3.5.2.jar:/home/tajgeer/.ivy2/cache/org.json4s/json4s-core_2.12/jars/json4s-core_2.12-3.5.2.jar:/home/tajgeer/.ivy2/cache/org.json4s/json4s-ast_2.12/jars/json4s-ast_2.12-3.5.2.jar:/home/tajgeer/.ivy2/cache/org.json4s/json4s-scalap_2.12/jars/json4s-scalap_2.12-3.5.2.jar:/home/tajgeer/.ivy2/cache/com.thoughtworks.paranamer/paranamer/bundles/paranamer-2.8.jar:/home/tajgeer/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.0.6.jar
+[warn] /home/tajgeer/Repozytoria/PackageManager/src/main/scala/entities/TrackEntity.scala:49: comparing values of types Int and Null using `!=' will always yield true
+[warn]     if (if (date != null) !(date == that.date)
+[warn]                  ^
+[warn] /home/tajgeer/Repozytoria/PackageManager/src/main/scala/entities/TrackEntity.scala:50: comparing values of types Int and Null using `!=' will always yield true
+[warn]     else that.date != null) return false
+[warn]                    ^
+[warn] /home/tajgeer/Repozytoria/PackageManager/src/main/scala/entities/TrackEntity.scala:60: comparing values of types Int and Null using `!=' will always yield true
+[warn]     result = 31 * result + (if (date != null) date.hashCode
+[warn]                                      ^
+[warn] three warnings found
+[debug] Scala compilation took 12.031415184 s
+[debug] [naha] Invalidating /home/tajgeer/Repozytoria/PackageManager/src/main/scala/Application.scala...
+[debug] [naha] Invalidating (transitively) by inheritance from /home/tajgeer/Repozytoria/PackageManager/src/main/scala/Application.scala...
+[debug] [naha] Initial set of included nodes: Set(/home/tajgeer/Repozytoria/PackageManager/src/main/scala/Application.scala)
+[debug] [naha] Invalidated by transitive inheritance dependency: Set(/home/tajgeer/Repozytoria/PackageManager/src/main/scala/Application.scala)
+[debug] [naha] The /home/tajgeer/Repozytoria/PackageManager/src/main/scala/Application.scala source file has the following regular definitions changed:
+[debug] [naha] 	notify, wait, $asInstanceOf, equals, asInstanceOf, synchronized, $isInstanceOf, main, notifyAll, isInstanceOf, ==, entityManager, clone, Application, toString, !=, getClass, entityManagerFactory, ne, eq, ##, finalize, hashCode.
+[debug] [naha] All member reference dependencies will be considered within this context.
+[debug] [naha] Invalidating /home/tajgeer/Repozytoria/PackageManager/src/main/scala/entities/PackageEntity.scala...
+[debug] [naha] Invalidating (transitively) by inheritance from /home/tajgeer/Repozytoria/PackageManager/src/main/scala/entities/PackageEntity.scala...
+[debug] [naha] Initial set of included nodes: Set(/home/tajgeer/Repozytoria/PackageManager/src/main/scala/entities/PackageEntity.scala)
+[debug] [naha] Invalidated by transitive inheritance dependency: Set(/home/tajgeer/Repozytoria/PackageManager/src/main/scala/entities/PackageEntity.scala)
+[debug] [naha] The /home/tajgeer/Repozytoria/PackageManager/src/main/scala/entities/PackageEntity.scala source file has the following regular definitions changed:
+[debug] [naha] 	notify, wait, $asInstanceOf, setId, equals, isStatus, setTrackNumber, asInstanceOf, synchronized, $isInstanceOf, setStatus, PackageEntity, notifyAll, isInstanceOf, getTrackNumber, <init>, ==, clone, toString, !=, getClass, ne, getId, eq, ##, finalize, hashCode.
+[debug] [naha] All member reference dependencies will be considered within this context.
+[debug] [naha] Invalidating /home/tajgeer/Repozytoria/PackageManager/src/main/scala/API.scala...
+[debug] [naha] Invalidating (transitively) by inheritance from /home/tajgeer/Repozytoria/PackageManager/src/main/scala/API.scala...
+[debug] [naha] Initial set of included nodes: Set(/home/tajgeer/Repozytoria/PackageManager/src/main/scala/API.scala)
+[debug] [naha] Invalidated by transitive inheritance dependency: Set(/home/tajgeer/Repozytoria/PackageManager/src/main/scala/API.scala)
+[debug] [naha] The /home/tajgeer/Repozytoria/PackageManager/src/main/scala/API.scala source file has the following regular definitions changed:
+[debug] [naha] 	notify, wait, USER_AGENT, $asInstanceOf, equals, asInstanceOf, synchronized, $isInstanceOf, notifyAll, isInstanceOf, getPackage, ==, clone, toString, !=, API, getClass, ne, API_KEY, eq, ##, finalize, hashCode.
+[debug] [naha] All member reference dependencies will be considered within this context.
+[debug] [naha] The following modified names cause invalidation of /home/tajgeer/Repozytoria/PackageManager/src/main/scala/Application.scala: Set(asInstanceOf, isInstanceOf, getPackage, API)
+[debug] [naha] Invalidating /home/tajgeer/Repozytoria/PackageManager/src/main/scala/entities/TrackEntity.scala...
+[debug] [naha] Invalidating (transitively) by inheritance from /home/tajgeer/Repozytoria/PackageManager/src/main/scala/entities/TrackEntity.scala...
+[debug] [naha] Initial set of included nodes: Set(/home/tajgeer/Repozytoria/PackageManager/src/main/scala/entities/TrackEntity.scala)
+[debug] [naha] Invalidated by transitive inheritance dependency: Set(/home/tajgeer/Repozytoria/PackageManager/src/main/scala/entities/TrackEntity.scala)
+[debug] [naha] The /home/tajgeer/Repozytoria/PackageManager/src/main/scala/entities/TrackEntity.scala source file has the following regular definitions changed:
+[debug] [naha] 	notify, wait, $asInstanceOf, setId, equals, asInstanceOf, synchronized, getStatus, $isInstanceOf, setStatus, getDate, notifyAll, isInstanceOf, <init>, setDate, TrackEntity, ==, clone, getLocation, toString, !=, setPackageId, getClass, ne, setLocation, getPackageId, getId, eq, ##, finalize, hashCode.
+[debug] [naha] All member reference dependencies will be considered within this context.
+[debug] [naha] Invalidating /home/tajgeer/Repozytoria/PackageManager/src/main/scala/Response.scala...
+[debug] [naha] Invalidating (transitively) by inheritance from /home/tajgeer/Repozytoria/PackageManager/src/main/scala/Response.scala...
+[debug] [naha] Initial set of included nodes: Set(/home/tajgeer/Repozytoria/PackageManager/src/main/scala/Response.scala)
+[debug] [naha] Invalidated by transitive inheritance dependency: Set(/home/tajgeer/Repozytoria/PackageManager/src/main/scala/Response.scala)
+[debug] [naha] The /home/tajgeer/Repozytoria/PackageManager/src/main/scala/Response.scala source file has the following regular definitions changed:
+[debug] [naha] 	notify, wait, copy$default$2, $asInstanceOf, location, timestamp, productArity, equals, asInstanceOf, synchronized, $isInstanceOf, attention, canEqual, copy$default$4, productPrefix, notifyAll, code, Step, isInstanceOf, response, <init>, processingTime, Package, ==, clone, status, $init$, Response, copy$default$3, copy, toString, !=, getClass, copy$default$1, ne, eq, productIterator, ##, finalize, productElement, hashCode.
+[debug] [naha] All member reference dependencies will be considered within this context.
+[debug] [naha] New invalidations:
+[debug] [naha] 	Set()
+[debug] [naha] Initial set of included nodes: Set()
+[debug] [naha] Previously invalidated, but (transitively) depend on new invalidations:
+[debug] [naha] 	Set()
+[debug] [naha] All newly invalidated sources after taking into account (previously) recompiled sources:Set()
