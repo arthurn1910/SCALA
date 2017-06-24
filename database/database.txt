@@ -12,9 +12,10 @@ CREATE TABLE track
   date timestamp NOT NULL,
   location text NOT NULL,
   status text NOT NULL,
-  cena real NOT NULL,
   package_id serial NOT NULL,
   CONSTRAINT track_fkey FOREIGN KEY (package_id)
-      REFERENCES package (id)
+      REFERENCES package (id),
+
+CONSTRAINT track_id_pkey PRIMARY KEY (id)
   
 )

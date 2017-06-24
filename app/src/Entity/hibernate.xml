@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:postgresql://ec2-23-21-246-11.compute-1.amazonaws.com:5432/dav5bc69lqbe93</property>
+    <property name="connection.driver_class">org.postgresql.Driver</property>
+    <mapping class="Entity.PackageEntity"/>
+      <mapping class="Entity.TrackEntity"/>
+      <!-- DB schema will be updated if needed -->
+    <!-- <property name="hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>
