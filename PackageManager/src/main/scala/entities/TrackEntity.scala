@@ -71,6 +71,8 @@ class TrackEntity {
     result
   }
 
+  @Basic
+  @Column(name = "package_id", nullable = false)
   def getPackageId: Int = packageId
 
   def setPackageId(packageId: Int): Unit = {
