@@ -59,6 +59,7 @@ object Application {
       println("Liczba statusów: " + p.getStepsCount())
       println("Obsługujący kurier: " + p.getCarrier())
 
+      val steps: List[Step] = p.getSteps()
       for (step <- steps) {
         println(step.timestamp + " | " + step.location + " | " + step.status)
       }
