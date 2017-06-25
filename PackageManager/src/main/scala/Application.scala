@@ -2,9 +2,12 @@
   * Created by tajgeer on 24.06.17.
   */
 
-import entities._
 import org.hibernate.boot.registry._
 import org.hibernate.boot._
+
+import scalafx.application._
+import scalafx.geometry._
+import scalafx.scene._
 
 object Application {
 

@@ -7,22 +7,22 @@
 		revision="1.0"
 		conf="compile-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20170625101615"/>
+		date="20170625120717"/>
 	<dependencies>
 		<module organisation="org.scalactic" name="scalactic_2.12">
-			<revision name="3.0.1" status="release" pubdate="20161110065016" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scalatest.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="12">
+			<revision name="3.0.1" status="release" pubdate="20161110065016" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scalatest.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="13">
 				<license name="the Apache License, ASL Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<metadata-artifact status="no" details="" size="2967" time="0" location="/home/tajgeer/.ivy2/cache/org.scalactic/scalactic_2.12/ivy-3.0.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalactic/scalactic_2.12/3.0.1/scalactic_2.12-3.0.1.pom"/>
 				<caller organisation="default" name="packagemanager$sources_2.12" conf="compile-internal, compile, provided, optional" rev="3.0.1" rev-constraint-default="3.0.1" rev-constraint-dynamic="3.0.1" callerrev="1.0"/>
 				<artifacts>
-					<artifact name="scalactic_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="201082" time="194" location="/home/tajgeer/.ivy2/cache/org.scalactic/scalactic_2.12/srcs/scalactic_2.12-3.0.1-sources.jar">
+					<artifact name="scalactic_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="201082" time="0" location="/home/tajgeer/.ivy2/cache/org.scalactic/scalactic_2.12/srcs/scalactic_2.12-3.0.1-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scalactic/scalactic_2.12/3.0.1/scalactic_2.12-3.0.1-sources.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.typesafe.slick" name="slick_2.12">
-			<revision name="3.2.0" status="release" pubdate="20170224135407" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://slick.typesafe.com" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="9">
+			<revision name="3.2.0" status="release" pubdate="20170224135407" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://slick.typesafe.com" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="10">
 				<license name="Two-clause BSD-style license" url="http://github.com/slick/slick/blob/master/LICENSE.txt"/>
 				<metadata-artifact status="no" details="" size="3130" time="0" location="/home/tajgeer/.ivy2/cache/com.typesafe.slick/slick_2.12/ivy-3.2.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/slick/slick_2.12/3.2.0/slick_2.12-3.2.0.pom"/>
 				<caller organisation="default" name="packagemanager$sources_2.12" conf="compile-internal, compile, provided, optional" rev="3.2.0" rev-constraint-default="3.2.0" rev-constraint-dynamic="3.2.0" callerrev="1.0"/>
@@ -34,7 +34,7 @@
 			</revision>
 		</module>
 		<module organisation="org.reactivestreams" name="reactive-streams">
-			<revision name="1.0.0" status="release" pubdate="20150429181454" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.reactive-streams.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="11">
+			<revision name="1.0.0" status="release" pubdate="20150429181454" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.reactive-streams.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="12">
 				<license name="CC0" url="http://creativecommons.org/publicdomain/zero/1.0/"/>
 				<metadata-artifact status="no" details="" size="2523" time="0" location="/home/tajgeer/.ivy2/cache/org.reactivestreams/reactive-streams/ivy-1.0.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/reactivestreams/reactive-streams/1.0.0/reactive-streams-1.0.0.pom"/>
 				<caller organisation="default" name="packagemanager$sources_2.12" conf="compile-internal, compile, provided, optional" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="1.0"/>
@@ -46,13 +46,25 @@
 			</revision>
 		</module>
 		<module organisation="com.typesafe" name="config">
-			<revision name="1.2.1" status="release" pubdate="20140502165416" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/typesafehub/config" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="8">
+			<revision name="1.2.1" status="release" pubdate="20140502165416" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/typesafehub/config" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="9">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<metadata-artifact status="no" details="" size="2878" time="0" location="/home/tajgeer/.ivy2/cache/com.typesafe/config/ivy-1.2.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/config/1.2.1/config-1.2.1.pom"/>
 				<caller organisation="default" name="packagemanager$sources_2.12" conf="compile-internal, compile, provided, optional" rev="1.2.1" rev-constraint-default="1.2.1" rev-constraint-dynamic="1.2.1" callerrev="1.0"/>
 				<artifacts>
 					<artifact name="config" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="132611" time="0" location="/home/tajgeer/.ivy2/cache/com.typesafe/config/srcs/config-1.2.1-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/config/1.2.1/config-1.2.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scalafx" name="scalafx_2.12">
+			<revision name="8.0.102-R11" status="release" pubdate="20161103000138" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scalafx.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="7">
+				<license name="BSD" url="https://github.com/scalafx/scalafx/blob/master/LICENSE.txt"/>
+				<metadata-artifact status="no" details="" size="3035" time="0" location="/home/tajgeer/.ivy2/cache/org.scalafx/scalafx_2.12/ivy-8.0.102-R11.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalafx/scalafx_2.12/8.0.102-R11/scalafx_2.12-8.0.102-R11.pom"/>
+				<caller organisation="default" name="packagemanager$sources_2.12" conf="compile-internal, compile, provided, optional" rev="8.0.102-R11" rev-constraint-default="8.0.102-R11" rev-constraint-dynamic="8.0.102-R11" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="scalafx_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="961620" time="253" location="/home/tajgeer/.ivy2/cache/org.scalafx/scalafx_2.12/srcs/scalafx_2.12-8.0.102-R11-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scalafx/scalafx_2.12/8.0.102-R11/scalafx_2.12-8.0.102-R11-sources.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -94,7 +106,7 @@
 			</revision>
 		</module>
 		<module organisation="org.json4s" name="json4s-scalap_2.12">
-			<revision name="3.5.2" status="release" pubdate="20170504223451" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/json4s/json4s" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="10">
+			<revision name="3.5.2" status="release" pubdate="20170504223451" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/json4s/json4s" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="11">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<metadata-artifact status="no" details="" size="2657" time="0" location="/home/tajgeer/.ivy2/cache/org.json4s/json4s-scalap_2.12/ivy-3.5.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/json4s/json4s-scalap_2.12/3.5.2/json4s-scalap_2.12-3.5.2.pom"/>
 				<caller organisation="default" name="packagemanager$sources_2.12" conf="compile-internal, compile, provided, optional" rev="3.5.2" rev-constraint-default="3.5.2" rev-constraint-dynamic="3.5.2" callerrev="1.0"/>
@@ -106,7 +118,7 @@
 			</revision>
 		</module>
 		<module organisation="org.json4s" name="json4s-ast_2.12">
-			<revision name="3.5.2" status="release" pubdate="20170504223220" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/json4s/json4s" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="7">
+			<revision name="3.5.2" status="release" pubdate="20170504223220" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/json4s/json4s" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="8">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<metadata-artifact status="no" details="" size="2648" time="0" location="/home/tajgeer/.ivy2/cache/org.json4s/json4s-ast_2.12/ivy-3.5.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/json4s/json4s-ast_2.12/3.5.2/json4s-ast_2.12-3.5.2.pom"/>
 				<caller organisation="default" name="packagemanager$sources_2.12" conf="compile-internal, compile, provided, optional" rev="3.5.2" rev-constraint-default="3.5.2" rev-constraint-dynamic="3.5.2" callerrev="1.0"/>
