@@ -1,3 +1,4 @@
+package API
 /**
   * Created by tajgeer on 25.06.17.
   */
@@ -11,7 +12,7 @@ case class Step(
    attention: Boolean
  )
 
-class Package(paczka: JObject) {
+class Package(val paczka :JObject) {
 
   implicit val formats = DefaultFormats
 

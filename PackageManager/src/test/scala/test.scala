@@ -1,6 +1,7 @@
 /**
   * Created by tajgeer on 25.06.17.
   */
+import API._
 import org.scalatest._
 
 class test extends FlatSpec with Matchers {
