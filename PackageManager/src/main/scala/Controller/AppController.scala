@@ -12,6 +12,10 @@ import javafx.scene.control._
 import javafx.scene.control.Alert._
 import javafx.{event => jfxe, fxml => jfxf}
 
+import java.util.Date
+import java.text.SimpleDateFormat
+
+
 import entities.{PackageEntity, TrackEntity}
 import org.hibernate.boot.MetadataSources
 import org.hibernate.boot.registry.{StandardServiceRegistry, StandardServiceRegistryBuilder}
@@ -113,9 +117,14 @@ class AppController extends jfxf.Initializable {
       session.beginTransaction()
 
       var id = 0
-      for (parcel <- parcelList) {
-        if (parcel.asInstanceOf[PackageEntity].getTrackNumber == selected) {
-          id = parcel.asInstanceOf[PackageEntity].getId
+      var loop = new Breaks
+
+      loop.breakable {
+        for (parcel <- parcelList) {
+          if (parcel.asInstanceOf[PackageEntity].getTrackNumber == selected) {
+            id = parcel.asInstanceOf[PackageEntity].getId
+            loop.break()
+          }
         }
       }
 
@@ -170,8 +179,16 @@ class AppController extends jfxf.Initializable {
     }
 
     for (track <- trackList) {
-      if (track.asInstanceOf[TrackEntity].getPackageId == parcelId)
-        stepsList.getItems.add(track.asInstanceOf[TrackEntity].getDate + track.asInstanceOf[TrackEntity].getLocation)
+      if (track.asInstanceOf[TrackEntity].getPackageId == parcelId) {
+        val item = track.asInstanceOf[TrackEntity]
+
+        val ts = item.getDate * 1000L
+        val df = new SimpleDateFormat("dd.MM.yyyy")
+        val date = df.format(ts)
+
+        stepsList.getItems.add(date + ", " + item.getLocation + ": " + item.getStatus)
+      }
+
     }
   }
 
