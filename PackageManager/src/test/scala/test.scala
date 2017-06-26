@@ -21,7 +21,7 @@ class test extends FlatSpec with Matchers {
 
     p should not be null
 
-    val paczka = new Paczka(p)
+    val paczka = new Package(p)
 
     paczka.getCarrier() should be ("DHL")
     paczka.getPackcode() should be ("16592873837")

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="5.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AppController">
+   <children>
+      <HBox spacing="5.0">
+         <children>
+            <TextField fx:id="parcelNumberTextField" promptText="Parcel number" />
+            <Button mnemonicParsing="false" onAction="#trackNewParcel" text="Track new parcel" />
+            <Button mnemonicParsing="false" onAction="#refresh" text="Refresh" />
+            <Button mnemonicParsing="false" onAction="#showDetails" text="Show details" />
+         </children>
+      </HBox>
+      <HBox spacing="5.0">
+         <children>
+            <ListView fx:id="parcelNumberList" />
+            <VBox spacing="5.0">
+               <children>
+                  <HBox spacing="5.0">
+                     <children>
+                        <Label text="Parcel code:" />
+                        <Label fx:id="parcelCodeLabel" />
+                     </children>
+                  </HBox>
+                  <HBox spacing="5.0">
+                     <children>
+                        <Label text="Status:" />
+                        <Label fx:id="isDeliveredLabel" prefHeight="17.0" prefWidth="140.0" />
+                     </children>
+                  </HBox>
+                  <ListView fx:id="stepsList" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Button mnemonicParsing="false" onAction="#deleteParcel" text="Delete parcel" />
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</VBox>
