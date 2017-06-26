@@ -17,11 +17,11 @@ object Application {
   def main(args: Array[String]): Unit = {
 
     val paczka = API.getPackage("16592873837")
-    var p: Paczka = null
+    var p: Package = null
 
     paczka match {
       case Right(x) => {
-        p = new Paczka(x.asInstanceOf[org.json4s.JObject])
+        p = new Package(x.asInstanceOf[org.json4s.JObject])
       }
       case Left(x) => {
         p = null

@@ -4,7 +4,14 @@
 import org.json4s.DefaultFormats
 import org.json4s.JsonAST.JObject
 
-class Paczka(paczka: JObject) {
+case class Step(
+   location :String,
+   status :String,
+   timestamp :Int,
+   attention: Boolean
+ )
+
+class Package(paczka: JObject) {
 
   implicit val formats = DefaultFormats
 

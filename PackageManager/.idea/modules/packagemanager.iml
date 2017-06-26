@@ -10,6 +10,9 @@
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/../../src/main/scala/hibernate.cfg.xml" />
       </configuration>
     </facet>
+    <facet type="Spring" name="Spring">
+      <configuration />
+    </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/../../target/scala-2.12/classes" />
@@ -33,7 +36,33 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="SBT: org.scala-lang:scala-library:2.12.2:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.scalafx:scalafx_2.12:8.0.102-R11:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.springframework.data:spring-data-jpa:1.8.1.RELEASE:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.springframework.data:spring-data-commons:1.10.1.RELEASE:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.springframework:spring-tx:4.0.9.RELEASE:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.springframework:spring-orm:4.0.9.RELEASE:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.springframework:spring-jdbc:4.0.9.RELEASE:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.springframework:spring-expression:4.0.9.RELEASE:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.springframework:spring-core:4.0.9.RELEASE:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.springframework:spring-context:4.0.9.RELEASE:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.springframework:spring-beans:4.0.9.RELEASE:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.springframework:spring-aop:4.0.9.RELEASE:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.slf4j:jcl-over-slf4j:1.7.10:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.aspectj:aspectjrt:1.8.5:jar" level="project" />
+    <orderEntry type="library" name="SBT: aopalliance:aopalliance:1.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.scalatest:scalatest_2.12:3.0.1:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scalactic:scalactic_2.12:3.0.1:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.scala-lang.modules:scala-parser-combinators_2.12:1.0.4:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scala-lang:scala-reflect:2.12.2:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scala-lang.modules:scala-xml_2.12:1.0.6:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.json4s:json4s-scalap_2.12:3.5.2:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.json4s:json4s-native_2.12:3.5.2:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.json4s:json4s-core_2.12:3.5.2:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.json4s:json4s-ast_2.12:3.5.2:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.thoughtworks.paranamer:paranamer:2.8:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.typesafe:config:1.2.1:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.typesafe.slick:slick_2.12:3.2.0:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.reactivestreams:reactive-streams:1.0.0:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.slf4j:slf4j-api:1.7.18:jar" level="project" />
     <orderEntry type="module-library">
       <library name="SBT: unmanaged-jars">
         <CLASSES>
@@ -53,19 +82,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="SBT: org.slf4j:slf4j-api:1.7.18:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.reactivestreams:reactive-streams:1.0.0:jar" level="project" />
-    <orderEntry type="library" name="SBT: com.typesafe.slick:slick_2.12:3.2.0:jar" level="project" />
-    <orderEntry type="library" name="SBT: com.typesafe:config:1.2.1:jar" level="project" />
-    <orderEntry type="library" name="SBT: com.thoughtworks.paranamer:paranamer:2.8:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.json4s:json4s-ast_2.12:3.5.2:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.json4s:json4s-core_2.12:3.5.2:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.json4s:json4s-native_2.12:3.5.2:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.json4s:json4s-scalap_2.12:3.5.2:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.scala-lang.modules:scala-xml_2.12:1.0.6:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.scala-lang:scala-reflect:2.12.2:jar" level="project" />
-    <orderEntry type="library" scope="TEST" name="SBT: org.scala-lang.modules:scala-parser-combinators_2.12:1.0.4:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.scalactic:scalactic_2.12:3.0.1:jar" level="project" />
-    <orderEntry type="library" scope="TEST" name="SBT: org.scalatest:scalatest_2.12:3.0.1:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scalafx:scalafx_2.12:8.0.102-R11:jar" level="project" />
   </component>
 </module>
