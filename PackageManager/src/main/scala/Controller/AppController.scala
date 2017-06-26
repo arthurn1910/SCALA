@@ -113,8 +113,8 @@ class AppController extends jfxf.Initializable {
       session.close()
 
       val alert = new Alert(AlertType.INFORMATION)
-      alert.setTitle("Powodzenia")
-      alert.setHeaderText("Paczka została dodana!")
+      alert.setTitle("Success")
+      alert.setHeaderText("Package was added!")
       alert.showAndWait()
 
       refresh(event)
@@ -230,6 +230,67 @@ class AppController extends jfxf.Initializable {
     }
   }
 
+  def monitor(): Unit = {
+
+    for (parcel <- parcelList) {
+
+      var pack: Package = null
+
+      val p = parcel.asInstanceOf[PackageEntity]
+      val steps = trackList.count(_.asInstanceOf[TrackEntity].getPackageId == p.getId)
+
+      val api = API.getPackage(p.getTrackNumber)
+      api match {
+        case Right(x) => {
+            pack = new Package(x.asInstanceOf[org.json4s.JObject])
+        }
+        case Left(x) => {
+            pack = null
+
+        }
+      }
+
+      if (pack != null) {
+        if (pack.getStepsCount() > steps) {
+          println("Updating #" + p.getTrackNumber + "...")
+
+          val session = database.openSession()
+          session.beginTransaction()
+
+          var q = session.createQuery("DELETE FROM TrackEntity WHERE package_id=" + p.getId)
+          q.executeUpdate()
+
+          session.flush()
+          session.getTransaction.commit()
+
+          val steps: List[Step] = pack.getSteps()
+          for (step <- steps) {
+            session.beginTransaction()
+
+            val track = new TrackEntity
+            track.setDate(step.timestamp)
+            track.setLocation(step.location)
+            track.setStatus(step.status)
+            track.setPackageId(p.getId)
+
+            session.persist(track)
+            session.getTransaction.commit()
+          }
+
+          trackList = session.createQuery("FROM TrackEntity").list().asScala.toList
+
+          session.close()
+
+          val alert = new Alert(AlertType.INFORMATION)
+          alert.setTitle("Information")
+          alert.setHeaderText("Your package #" + p.getTrackNumber + " has new status!")
+          alert.showAndWait()
+
+        }
+      }
+    }
+  }
+
   def initialize(url: URL, rb: util.ResourceBundle): Unit = {
     val session = database.openSession()
     session.beginTransaction()
@@ -243,5 +304,17 @@ class AppController extends jfxf.Initializable {
     cDate.setCellValueFactory(new PropertyValueFactory[TableStep, String]("Date"))
     cLocation.setCellValueFactory(new PropertyValueFactory[TableStep, String]("Location"))
     cStatus.setCellValueFactory(new PropertyValueFactory[TableStep, String]("Status"))
+
+    val monitoring = new Runnable() {
+      def run(): Unit = {
+        while (true) {
+          monitor()
+          Thread.sleep(10000)
+        }
+      }
+    }
+
+    val thread = new Thread(monitoring)
+    thread.start()
   }
 }

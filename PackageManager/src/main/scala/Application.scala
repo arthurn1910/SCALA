@@ -10,6 +10,7 @@ import org.hibernate.boot._
 import scalafx.application.JFXApp
 import java.net.URL
 import java.util
+import java.util.concurrent.{ScheduledThreadPoolExecutor, TimeUnit}
 import javafx.scene.{control => jfxsc}
 import javafx.scene.{layout => jfxsl}
 import javafx.{event => jfxe}
@@ -34,7 +35,7 @@ object Application extends JFXApp
 
   stage = new PrimaryStage()
   {
-    title = "Parcel tracker"
+    title = "Parcel Tracker"
     scene  = new Scene(root)
   }
 }
