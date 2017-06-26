@@ -11,6 +11,7 @@ class PackageEntity {
   private var id = 0
   private var trackNumber = ""
   private var status = false
+  private var carrier = ""
 
   @Id
   @Column(name = "id", nullable = false)
@@ -19,6 +20,14 @@ class PackageEntity {
 
   def setId(id: Int): Unit = {
     this.id = id
+  }
+
+  @Basic
+  @Column(name = "carrier", nullable = false)
+  def getCarrier: String = carrier
+
+  def setCarrier(carrier :String): Unit = {
+    this.carrier = carrier
   }
 
   @Basic

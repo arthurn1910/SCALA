@@ -17,12 +17,11 @@
             <TextField fx:id="parcelNumberTextField" promptText="Parcel number" />
             <Button mnemonicParsing="false" onAction="#trackNewParcel" text="Track new parcel" />
             <Button mnemonicParsing="false" onAction="#refresh" text="Refresh" />
-            <Button mnemonicParsing="false" onAction="#showDetails" text="Show details" />
          </children>
       </HBox>
       <HBox spacing="5.0">
          <children>
-            <ListView fx:id="parcelNumberList" />
+            <ListView fx:id="parcelNumberList" onMouseClicked="#showDetails" />
             <VBox spacing="5.0">
                <children>
                   <HBox spacing="5.0">
@@ -37,7 +36,19 @@
                         <Label fx:id="isDeliveredLabel" prefHeight="17.0" prefWidth="140.0" />
                      </children>
                   </HBox>
-                  <ListView fx:id="stepsList" prefWidth="600.0"  />
+                   <HBox spacing="5.0">
+                       <children>
+                           <Label text="Carrier:" />
+                           <Label fx:id="carrierLabel" prefHeight="17.0" prefWidth="140.0" />
+                       </children>
+                   </HBox>
+                  <TableView fx:id="stepsTable" prefWidth="735.0">
+                     <columns>
+                        <TableColumn fx:id="cDate" prefWidth="135.0" text="Date"></TableColumn>
+                        <TableColumn fx:id="cLocation" prefWidth="150.0" text="Location"></TableColumn>
+                        <TableColumn fx:id="cStatus" prefWidth="450.0" text="Status"></TableColumn>
+                     </columns>
+                  </TableView>
                </children>
             </VBox>
          </children>
