@@ -99,6 +99,10 @@ class AppController extends jfxf.Initializable {
   private def deleteParcel(event: jfxe.ActionEvent): Unit = {
     val selected = parcelNumberList.getSelectionModel.getSelectedItem
 
+    if (selected == null) {
+      return
+    }
+
     val alert = new Alert(AlertType.CONFIRMATION)
     alert.setTitle("Potwierdzenie")
     alert.setHeaderText("Jesteś pewien, że chcesz usunąć przesyłkę " + selected + "?")
