@@ -14,6 +14,7 @@ class PackageEntity {
 
   @Id
   @Column(name = "id", nullable = false)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   def getId: Int = id
 
   def setId(id: Int): Unit = {

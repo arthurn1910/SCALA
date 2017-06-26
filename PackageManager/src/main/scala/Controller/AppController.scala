@@ -21,10 +21,9 @@ import scala.util.control.Breaks
 import scalafx.Includes._
 import scalafx.collections.ObservableBuffer
 
-class AppController extends jfxf.Initializable
-{
+class AppController extends jfxf.Initializable {
   val registry: StandardServiceRegistry = new StandardServiceRegistryBuilder().configure.build
-  val database = new MetadataSources( registry ).buildMetadata().buildSessionFactory()
+  val database = new MetadataSources(registry).buildMetadata().buildSessionFactory()
 
   @jfxf.FXML
   private var parcelNumberList: jfxsc.ListView[String] = _
@@ -37,17 +36,13 @@ class AppController extends jfxf.Initializable
   @jfxf.FXML
   private var parcelNumberTextField: jfxsc.TextField = _
 
-  var parcelList:List[Any] = _
-  var trackList:List[Any] = _
+  var parcelList: List[Any] = _
+  var trackList: List[Any] = _
 
   @jfxf.FXML
-  private def trackNewParcel(event: jfxe.ActionEvent): Unit =
-  {
+  private def trackNewParcel(event: jfxe.ActionEvent): Unit = {
     val parcel = API.getPackage(parcelNumberTextField.getText)
     var p: Package = null
-
-    println(parcelNumberTextField.getText)
-    println(parcel)
 
     parcel match {
       case Right(x) => {
@@ -63,9 +58,7 @@ class AppController extends jfxf.Initializable
       }
     }
 
-    if (p != null)
-    {
-      // RZUCIĆ OKIEM
+    if (p != null) {
       var session = database.openSession()
       session.beginTransaction()
 
@@ -74,6 +67,7 @@ class AppController extends jfxf.Initializable
       pack.setStatus(p.isDelivered())
 
       session.save(pack)
+      session.flush()
       session.getTransaction.commit()
 
       val steps: List[Step] = p.getSteps()
@@ -92,39 +86,73 @@ class AppController extends jfxf.Initializable
 
       session.close()
 
-      val alert = new Alert(AlertType.CONFIRMATION)
+      val alert = new Alert(AlertType.INFORMATION)
       alert.setTitle("Powodzenia")
       alert.setHeaderText("Paczka została dodana!")
       alert.showAndWait()
+
+      refresh(event)
     }
   }
 
   @jfxf.FXML
-  private def deleteParcel(event : jfxe.ActionEvent) : Unit =
-  {
-    println("parcel number " + parcelNumberList.getSelectionModel.getSelectedItem + " deleted")
+  private def deleteParcel(event: jfxe.ActionEvent): Unit = {
+    val selected = parcelNumberList.getSelectionModel.getSelectedItem
+
+    val alert = new Alert(AlertType.CONFIRMATION)
+    alert.setTitle("Potwierdzenie")
+    alert.setHeaderText("Jesteś pewien, że chcesz usunąć przesyłkę " + selected + "?")
+
+    val result = alert.showAndWait
+    if (result.get eq ButtonType.OK) {
+      val session = database.openSession()
+      session.beginTransaction()
+
+      var id = 0
+      for (parcel <- parcelList) {
+        if (parcel.asInstanceOf[PackageEntity].getTrackNumber == selected) {
+          id = parcel.asInstanceOf[PackageEntity].getId
+        }
+      }
+
+      if (id > 0) {
+        var q = session.createQuery("DELETE FROM PackageEntity WHERE id=" + id)
+        q.executeUpdate()
+
+        q = session.createQuery("DELETE FROM TrackEntity WHERE package_id=" + id)
+        q.executeUpdate()
+      }
+
+      session.close()
+
+      refresh(event)
+    }
   }
 
   @jfxf.FXML
-  private def refresh(event : jfxe.ActionEvent) : Unit =
-  {
-    println("refreshed ")
+  private def refresh(event: jfxe.ActionEvent): Unit = {
+    val session = database.openSession()
+    session.beginTransaction()
+    parcelList = session.createQuery("FROM PackageEntity").list().asScala.toList
+    trackList = session.createQuery("FROM TrackEntity").list().asScala.toList
+    session.close()
+
+    parcelNumberList.getItems().clear()
+
+    for (parcel <- parcelList)
+      parcelNumberList.getItems.add(parcel.asInstanceOf[PackageEntity].getTrackNumber)
   }
 
   @jfxf.FXML
-  private def showDetails(event : jfxe.ActionEvent) : Unit =
-  {
+  private def showDetails(event: jfxe.ActionEvent): Unit = {
     val selectedNumber = parcelNumberList.getSelectionModel.getSelectedItem
 
     var parcelId = 0
     var loop = new Breaks
 
-    loop.breakable
-    {
-      for (parcel <- parcelList)
-      {
-        if (parcel.asInstanceOf[PackageEntity].getTrackNumber == selectedNumber)
-        {
+    loop.breakable {
+      for (parcel <- parcelList) {
+        if (parcel.asInstanceOf[PackageEntity].getTrackNumber == selectedNumber) {
           parcelCodeLabel.setText(selectedNumber)
           if (parcel.asInstanceOf[PackageEntity].isStatus)
             isDeliveredLabel.setText("Delivered")
@@ -137,22 +165,20 @@ class AppController extends jfxf.Initializable
       }
     }
 
-    for(track <- trackList)
-    {
-      if(track.asInstanceOf[TrackEntity].getPackageId == parcelId)
+    for (track <- trackList) {
+      if (track.asInstanceOf[TrackEntity].getPackageId == parcelId)
         stepsList.getItems.add(track.asInstanceOf[TrackEntity].getDate + track.asInstanceOf[TrackEntity].getLocation)
     }
   }
 
-  def initialize(url: URL, rb: util.ResourceBundle): Unit =
-  {
+  def initialize(url: URL, rb: util.ResourceBundle): Unit = {
     val session = database.openSession()
     session.beginTransaction()
     parcelList = session.createQuery("FROM PackageEntity").list().asScala.toList
     trackList = session.createQuery("FROM TrackEntity").list().asScala.toList
     session.close()
 
-    for(parcel <- parcelList)
+    for (parcel <- parcelList)
       parcelNumberList.getItems.add(parcel.asInstanceOf[PackageEntity].getTrackNumber)
   }
 }
