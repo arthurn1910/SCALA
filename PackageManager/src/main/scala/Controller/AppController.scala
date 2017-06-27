@@ -16,6 +16,10 @@ import java.text.SimpleDateFormat
 import javafx.beans.property.SimpleStringProperty
 import javafx.collections.{FXCollections, ObservableList}
 import javafx.scene.control.cell.PropertyValueFactory
+import javafx.application._
+
+import java.util.Timer
+import java.util.TimerTask
 
 import entities.{PackageEntity, TrackEntity}
 import org.hibernate.boot.MetadataSources
@@ -305,16 +309,17 @@ class AppController extends jfxf.Initializable {
     cLocation.setCellValueFactory(new PropertyValueFactory[TableStep, String]("Location"))
     cStatus.setCellValueFactory(new PropertyValueFactory[TableStep, String]("Status"))
 
-    val monitoring = new Runnable() {
-      def run(): Unit = {
-        while (true) {
-          monitor()
-          Thread.sleep(10000)
-        }
-      }
-    }
+    val timer = new Timer
+    timer.scheduleAtFixedRate(new TimerTask() {
+      override def run(): Unit = {
+        Platform.runLater(() => {
+          def run() = {
+            monitor()
+          }
 
-    val thread = new Thread(monitoring)
-    thread.start()
+          run()
+        })
+      }
+    }, 10000, 10000)
   }
 }
