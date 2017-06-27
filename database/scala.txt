@@ -1,7 +1,0 @@
-Host ec2-23-21-246-11.compute-1.amazonaws.com
-Database dav5bc69lqbe93
-User toznqmnkxpbthu
-Port 5432
-Password dbb57bd43166a01a2325dd18a2c543ccfbed166ccac3629d580df435a58b8364
-URI postgres://toznqmnkxpbthu:dbb57bd43166a01a2325dd18a2c543ccfbed166ccac3629d580df435a58b8364@ec2-23-21-246-11.compute-1.amazonaws.com:5432/dav5bc69lqbe93Heroku CLI
-heroku pg:psql postgresql-octagonal-16480 --app scala-pl2017
