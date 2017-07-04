@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SBT: com.zsoltfabok:sqlite-dialect:1.0:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.zsoltfabok/sqlite-dialect/jars/sqlite-dialect-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.zsoltfabok/sqlite-dialect/srcs/sqlite-dialect-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
